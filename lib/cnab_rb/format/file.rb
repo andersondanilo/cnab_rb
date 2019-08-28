@@ -1,5 +1,3 @@
-require_relative "line"
-
 module CnabRb::Format
   class File
     attr_accessor :lines
@@ -24,7 +22,7 @@ module CnabRb::Format
     end
 
     def get_line_layout(line_text)
-      raise CnabRb::Error.new("get_line_layout not implemented") 
+      raise CnabRb::Error.new("get_line_layout not implemented")
     end
   end
 end

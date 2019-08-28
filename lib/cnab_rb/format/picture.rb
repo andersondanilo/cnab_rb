@@ -1,7 +1,3 @@
-require_relative "picture_formats/text"
-require_relative "picture_formats/integer"
-require_relative "picture_formats/float"
-
 module CnabRb::Format
   class Picture
     def initialize(picture)

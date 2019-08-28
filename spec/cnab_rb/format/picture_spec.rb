@@ -1,5 +1,3 @@
-require "cnab_rb/format/picture"
-
 RSpec.describe CnabRb::Format::Picture do
   it "raise error on invalid picture" do
     expect{CnabRb::Format::Picture.new('X5')}.to raise_error(CnabRb::Error)

@@ -1,5 +1,3 @@
-require_relative "../format/field"
-
 module CnabRb::Layouts
   class Layout
     attr_accessor :fields

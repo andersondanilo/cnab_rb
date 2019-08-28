@@ -1,6 +1,3 @@
-require "cnab_rb/format/field"
-require "date"
-
 RSpec.describe CnabRb::Format::Field do
   it "decode date" do
     params = {pos: 1..6, picture: '9(6)', date_format: '%d%m%y'}
