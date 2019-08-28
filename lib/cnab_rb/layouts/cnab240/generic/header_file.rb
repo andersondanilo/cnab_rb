@@ -3,7 +3,7 @@ module CnabRb
     module Cnab240
       module Generic
         class HeaderFile < CnabRb::Layouts::Layout
-          def initialize
+          def init_fields
             field :bank_code,
               pos: 1..3,
               picture: '9(3)'
@@ -21,7 +21,7 @@ module CnabRb
               picture: '9(1)',
               default: '0'
 
-            field :exclusive_use_febraban_01,
+            field :exclusive_use_febraban_1,
               pos: 9..17,
               picture: 'X(9)',
               default: ''
@@ -50,7 +50,7 @@ module CnabRb
               pos: 33..48,
               picture: '9(16)'
 
-            field :exclusive_use_bank_01,
+            field :exclusive_use_bank_1,
               # Padrão: deixar em branco
               pos: 49..52,
               picture: 'X(4)',
@@ -79,7 +79,7 @@ module CnabRb
               pos: 59..70,
               picture: '9(12)'
 
-            field :transferor_cd,
+            field :transferor_code_cd,
               # Dígito Verificador do Cedente
               # Código adotado pela CAIXA, para verificação da autenticidade do Código do Cedente. Calculado
               # através do módulo 11.
@@ -136,7 +136,7 @@ module CnabRb
               pos: 103..132,
               picture: 'X(30)'
 
-            field :exclusive_use_febraban_02,
+            field :exclusive_use_febraban_2,
               # Texto de observações destinado para uso exclusivo da FEBRABAN. Preencher com Brancos.
               pos: 133..142,
               picture: 'X(10)',
@@ -204,7 +204,7 @@ module CnabRb
               picture: 'X(20)',
               default: 'REMESSA-PRODUCAO'
 
-            field :exclusive_use_febraban_02,
+            field :exclusive_use_febraban_2,
               # Texto de observações destinado para uso exclusivo da FEBRABAN. Preencher com Brancos.
               pos: 212..240,
               picture: 'X(29)',

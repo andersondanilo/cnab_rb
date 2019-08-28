@@ -6,6 +6,10 @@ module CnabRb::Layouts
 
     def initialize
       @fields = {}
+      init_fields
+    end
+
+    def init_fields
     end
 
     def field(name, params)
