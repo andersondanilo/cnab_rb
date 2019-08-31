@@ -9,7 +9,6 @@ module CnabRb::Format
           length_decimal = length_decimal.to_i
         end
 
-
         if 'X' == type
           @format = PictureFormats::Text.new(length)
         elsif ('9' == type and length_decimal.nil?)

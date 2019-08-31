@@ -36,7 +36,7 @@ module CnabRb::Layouts::Cnab240::Generic::Return
         pos: 16..17,
         picture: '9(2)'
 
-      field :mantainer_agency,
+      field :agency,
         # agencia_mantenedora
         pos: 18..22,
         picture: '9(5)'

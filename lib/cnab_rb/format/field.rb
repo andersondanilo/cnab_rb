@@ -36,8 +36,8 @@ module CnabRb::Format
     def decode(value)
       decoded = @picture.decode(value)
 
-      unless @date_format.nil?
-        DateTime.strptime(decoded.to_s, @date_format)
+      unless @date_format.nil? || decoded == 0
+        DateTime.strptime(decoded.to_s.rjust(length, '0'), @date_format)
       else
         decoded
       end

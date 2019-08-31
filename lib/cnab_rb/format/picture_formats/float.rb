@@ -24,7 +24,7 @@ module CnabRb::Format::PictureFormats
     end
 
     def length
-      @length_left + @length_right
+      @format_left.length + @length_right
     end
   end
 end

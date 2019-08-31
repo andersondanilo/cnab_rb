@@ -164,10 +164,10 @@ module CnabRb::Layouts::Cnab240::Generic
         # Número seqüencial adotado e controlado pelo responsável pela geração do arquivo para ordenar a
         # disposição dos arquivos encaminhados.
         # Evoluir um número seqüencial a cada header de arquivo.
-        pos: [158, 163],
+        pos: 158..163,
         picture: '9(6)'
 
-      file :layout_version,
+      field :layout_version,
         # Código adotado pela FEBRABAN para identificar qual a versão de layout do arquivo encaminhado. O
         # código é composto de:
         # Versão = 2 dígitos
@@ -177,7 +177,7 @@ module CnabRb::Layouts::Cnab240::Generic
         picture: '9(3)',
         default: '030'
 
-      file :density_file,
+      field :density_file,
         # Densidade de gravação (bpi), do arquivo encaminhado. Pode ser:
         # 1600 BPI
         # 6250 BPI
@@ -201,7 +201,7 @@ module CnabRb::Layouts::Cnab240::Generic
         picture: 'X(20)',
         default: 'REMESSA-PRODUCAO'
 
-      field :exclusive_use_febraban_2,
+      field :exclusive_use_febraban_3,
         # Texto de observações destinado para uso exclusivo da FEBRABAN. Preencher com Brancos.
         pos: 212..240,
         picture: 'X(29)',

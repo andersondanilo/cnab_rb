@@ -20,10 +20,9 @@ module CnabRb
     module Cnab240
       module Generic
         module Return
-          autoload :SegmentA, 'cnab_rb/layouts/cnab240/generic/segment_a'
-          autoload :SegmentT, 'cnab_rb/layouts/cnab240/generic/segment_t'
-          autoload :SegmentU, 'cnab_rb/layouts/cnab240/generic/segment_u'
-          autoload :SegmentW, 'cnab_rb/layouts/cnab240/generic/segment_w'
+          autoload :SegmentT, 'cnab_rb/layouts/cnab240/generic/return/segment_t'
+          autoload :SegmentU, 'cnab_rb/layouts/cnab240/generic/return/segment_u'
+          autoload :SegmentW, 'cnab_rb/layouts/cnab240/generic/return/segment_w'
         end
 
         autoload :HeaderFile, 'cnab_rb/layouts/cnab240/generic/header_file'
@@ -36,6 +35,13 @@ module CnabRb
   end
 
   module Return
+    module Cnab240
+      autoload :GenericReturn, 'cnab_rb/return/cnab240/generic_return'
+      autoload :Batch, 'cnab_rb/return/cnab240/batch'
+      autoload :Detail, 'cnab_rb/return/cnab240/detail'
+      autoload :CaixaReturn, 'cnab_rb/return/cnab240/caixa_return'
+    end
+
     autoload :ReturnFactory, 'cnab_rb/return/return_factory'
   end
 end

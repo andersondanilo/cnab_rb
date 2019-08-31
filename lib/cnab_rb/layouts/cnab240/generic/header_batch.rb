@@ -1,5 +1,5 @@
 module CnabRb::Layouts::Cnab240::Generic
-  class HeaderFile < CnabRb::Layouts::Layout
+  class HeaderBatch < CnabRb::Layouts::Layout
     def init_fields
       field :bank_code,
         # codigo_banco

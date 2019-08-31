@@ -45,5 +45,9 @@ module CnabRb::Format
 
       return false
     end
+
+    def field_exists(field_name)
+      @attributes.key? field_name.to_sym
+    end
   end
 end

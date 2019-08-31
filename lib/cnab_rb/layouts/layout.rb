@@ -29,7 +29,7 @@ module CnabRb::Layouts
       end
 
       if expected_line_length != actual_line_length
-        raise CnabRb::Error.new("Invalid layout length, expected #{expected_line_length}, actual #{actual_line_length}")
+        raise CnabRb::Error.new("Invalid layout length, expected #{expected_line_length}, actual #{actual_line_length}, layout: #{self.class}")
       end
     end
 

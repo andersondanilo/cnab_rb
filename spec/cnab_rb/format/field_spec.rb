@@ -6,6 +6,10 @@ RSpec.describe CnabRb::Format::Field do
     date = field.decode('200714')
     expect(date).to be_a(DateTime)
     expect(date.strftime('%Y-%m-%d %H:%M:%S')).to eq('2014-07-20 00:00:00')
+
+    date = field.decode('050714')
+    expect(date).to be_a(DateTime)
+    expect(date.strftime('%Y-%m-%d %H:%M:%S')).to eq('2014-07-05 00:00:00')
   end
 
   it "encode date" do

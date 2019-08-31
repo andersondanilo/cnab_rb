@@ -2,7 +2,7 @@ module CnabRb::Return
   class ReturnFactory
     def make_return(file_name)
       first_line = File.open(file_name, &:readline)
-      format = first_line.gsub(/(\r|\n)$/, '').length
+      format = first_line.gsub(/(\r|\n)/, '').length
       bank_code = first_line[0, 3]
       method = "make_cnab#{format}_#{bank_code}"
 
@@ -14,6 +14,9 @@ module CnabRb::Return
     end
 
     def make_cnab240_104(file_name)
+      file = CnabRb::Return::Cnab240::CaixaReturn.new
+      file.decode(File.read(file_name))
+      file
     end
   end
 end

@@ -15,10 +15,14 @@ module CnabRb::Format
     def decode(text)
       @lines = text.split(LINE_BREAK).map do |line_text|
         layout = get_line_layout(line_text)
-        line = Line.new(layout)
-        line.decode(line_text)
-        line
+        unless layout.nil?
+          line = Line.new(layout)
+          line.decode(line_text)
+          line
+        end
       end
+
+      @lines = @lines.filter {|n| !n.nil?}
     end
 
     def get_line_layout(line_text)
