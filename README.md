@@ -1,8 +1,6 @@
 # CnabRb
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/cnab_rb`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Project to create and read CNAB files
 
 ## Installation
 
@@ -22,7 +20,24 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Read return files:
+
+```ruby
+require 'cnab_rb'
+
+factory = CnabRb::Return::ReturnFactory.new
+file = factory.make_return('path/to/file.ret')
+
+file.details.each do |detail|
+  received_amount = detail.net_amount
+  is_write_off = detail.is_write_off
+  our_number = detail.our_number
+  
+  if is_write_off && received_amount
+    # your title is paid
+  end
+end
+```
 
 ## Development
 
