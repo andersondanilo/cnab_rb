@@ -33,7 +33,7 @@ file.details.each do |detail|
   is_write_off = detail.is_write_off
   our_number = detail.our_number
   
-  if is_write_off && received_amount
+  if is_write_off && received_amount > 0
     # your title is paid
   end
 end
