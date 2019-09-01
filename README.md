@@ -1,5 +1,7 @@
 # CnabRb
 
+[![Gem Version](https://badge.fury.io/rb/cnab_rb.svg)](https://badge.fury.io/rb/cnab_rb) [![Test](https://api.travis-ci.org/andersondanilo/cnab_rb.svg?branch=master)](https://travis-ci.org/andersondanilo/cnab_rb)
+
 Project to create and read CNAB files
 
 ## Installation
@@ -33,7 +35,7 @@ file.details.each do |detail|
   is_write_off = detail.is_write_off
   our_number = detail.our_number
   
-  if is_write_off && received_amount
+  if is_write_off && received_amount > 0
     # your title is paid
   end
 end
