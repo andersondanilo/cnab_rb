@@ -1,5 +1,7 @@
 # CnabRb
 
+[![Gem Version](https://badge.fury.io/rb/cnab_rb.svg)](https://badge.fury.io/rb/cnab_rb) [![Test](https://api.travis-ci.org/andersondanilo/cnab_rb.svg?branch=master)](https://travis-ci.org/andersondanilo/cnab_rb)
+
 Project to create and read CNAB files
 
 ## Installation
