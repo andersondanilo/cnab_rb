@@ -1,6 +1,6 @@
 # CnabRb
 
-[![Gem Version](https://badge.fury.io/rb/cnab_rb.svg)](https://badge.fury.io/rb/cnab_rb) [![Test](https://api.travis-ci.org/andersondanilo/cnab_rb.svg?branch=master)](https://travis-ci.org/andersondanilo/cnab_rb)
+[![Gem Version](https://badge.fury.io/rb/cnab_rb.svg)](https://badge.fury.io/rb/cnab_rb) [![Test](https://api.travis-ci.org/andersondanilo/cnab_rb.svg?branch=master)](https://travis-ci.org/andersondanilo/cnab_rb) [![Coverage Status](https://coveralls.io/repos/github/andersondanilo/cnab_rb/badge.svg?branch=master)](https://coveralls.io/github/andersondanilo/cnab_rb?branch=master)
 
 Project to create and read CNAB files
 
