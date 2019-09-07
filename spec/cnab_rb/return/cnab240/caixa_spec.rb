@@ -13,6 +13,8 @@ RSpec.describe CnabRb::Return::ReturnFactory do
     expect(detail.movement_code).to eq(6)
     expect(detail.net_amount).to eq(80.0)
     expect(detail.title_amount).to eq(80.0)
+    expect(detail.paid_amount).to eq(80.0)
+    expect(detail.other_expenses_amount).to eq(0.0)
     expect(detail.tax_amount).to eq(1.25)
     expect(detail.iof_amount).to eq(0.0)
     expect(detail.discount_amount).to eq(0.0)
@@ -22,6 +24,7 @@ RSpec.describe CnabRb::Return::ReturnFactory do
     expect(detail.document_number).to eq('000000000000000')
     expect(detail.wallet_code).to eq(1)
     expect(detail.agency).to eq(0)
+    expect(detail.agency_cd).to eq(0)
     expect(detail.our_number).to eq(240000000111369979)
     expect(detail.due_date).to eq(DateTime.new(2014, 1, 2))
     expect(detail.credit_date).to eq(DateTime.new(2014, 1, 7))
@@ -31,5 +34,7 @@ RSpec.describe CnabRb::Return::ReturnFactory do
     expect(detail.sequential_number).to eq(1)
     expect(detail.is_write_off).to eq(true)
     expect(detail.is_rejected_write_off).to eq(false)
+
+    file.details
   end
 end

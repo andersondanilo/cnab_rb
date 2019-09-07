@@ -1,8 +1,9 @@
 require "bundler/setup"
-require "cnab_rb"
 require 'coveralls'
 
 Coveralls.wear!
+
+require "cnab_rb"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

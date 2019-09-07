@@ -31,6 +31,8 @@ module CnabRb::Layouts
       if expected_line_length != actual_line_length
         raise CnabRb::Error.new("Invalid layout length, expected #{expected_line_length}, actual #{actual_line_length}, layout: #{self.class}")
       end
+
+      true
     end
 
     def ordered_fields

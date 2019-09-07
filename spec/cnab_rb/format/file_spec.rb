@@ -53,4 +53,10 @@ RSpec.describe CnabRb::Format::File do
     expect(file.lines[1].name).to eq('PEDRO')
     expect(file.lines[1].age).to eq(11)
   end
+
+  it "need get_file_layout" do
+    file = CnabRb::Format::File.new
+
+    expect{file.decode("ABC")}.to raise_error(CnabRb::Error)
+  end
 end

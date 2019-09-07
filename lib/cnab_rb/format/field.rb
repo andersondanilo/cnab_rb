@@ -24,6 +24,7 @@ module CnabRb::Format
       if length != @picture.length
         raise CnabRb::Error.new("Invalid picture length between #{@pos_start} and #{@pos_end}")
       end
+      true
     end
 
     def encode(value)

@@ -45,4 +45,20 @@ RSpec.describe CnabRb::Format::Line do
     expect(line.name).to eq('JOAO')
     expect(line.age).to eq(30)
   end
+
+  it "respond to missing" do
+    layout = CnabRb::Layouts::Layout.new
+
+    layout.field :name,
+      pos: 1..5,
+      picture: 'X(5)',
+      default: 'anna'
+
+    line = CnabRb::Format::Line.new(layout)
+
+    expect{line.name2}.to raise_error(NoMethodError)
+    expect(line.respond_to?(:name2)).to eq(false)
+    expect(line.respond_to?(:name)).to eq(true)
+    expect(line.respond_to?(:name=)).to eq(true)
+  end
 end

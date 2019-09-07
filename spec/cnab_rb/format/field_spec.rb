@@ -19,4 +19,14 @@ RSpec.describe CnabRb::Format::Field do
     date = DateTime.new(2015, 10, 11)
     expect(field.encode(date)).to eq('111015')
   end
+
+  it "validate!" do
+    params = {pos: 1..6, picture: '9(6)', date_format: '%d%m%y'}
+    field = CnabRb::Format::Field.new params
+    expect(field.validate!).to eq(true)
+
+    params = {pos: 1..5, picture: '9(6)', date_format: '%d%m%y'}
+    field = CnabRb::Format::Field.new params
+    expect{field.validate!}.to raise_error(CnabRb::Error)
+  end
 end

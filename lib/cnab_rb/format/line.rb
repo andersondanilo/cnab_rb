@@ -3,6 +3,12 @@ module CnabRb::Format
     def initialize(layout, attributes = {})
       @layout = layout
       @attributes = attributes
+
+      @layout.fields.each do |key, field|
+        if @attributes[key].nil?
+          @attributes[key] = nil
+        end
+      end
     end
 
     def encode
@@ -17,7 +23,7 @@ module CnabRb::Format
     def decode(text)
       @layout.validate!
       @layout.fields.each do |key, field|
-        substr = text[field.pos_start - 1, field.length]
+        substr = text[field.pos_start - 1, field.length].to_s
         @attributes[key] = field.decode(substr)
       end
     end
@@ -31,15 +37,15 @@ module CnabRb::Format
         return @attributes[$1.to_sym] = args[0]
       end
 
-      raise ArgumentError.new("Method `#{method_name}` doesn't exist.")
+      raise NoMethodError.new("Method `#{method_name}` doesn't exist.")
     end
 
-    def respond_to_missing?(method_name)
+    def respond_to_missing?(method_name, include_private = false)
       if @attributes.key? method_name.to_sym
         return true
       end
 
-      if method_name =~ /(.+)=/
+      if method_name.to_s =~ /(.+)=/
         return @attributes.key? $1.to_sym
       end
 
